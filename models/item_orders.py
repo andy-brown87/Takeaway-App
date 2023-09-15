@@ -9,4 +9,4 @@ class Item_order(db.Model):
     quantity = db.Column(db.Integer())
 
     def __repr__(self):
-        return f"<Order: {self.id}: {self.quantity}>"
+        return f"<Item_order: Id:{self.id}, order_id: {self.order_id}, item_id: {self.item_id}, quantity: {self.quantity}>"

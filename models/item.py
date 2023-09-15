@@ -1,12 +1,11 @@
 from app import db
 
 class Item(db.Model):
-    __tablename__ = "orders"
+    __tablename__ = "items"
 
     id = db.Column(db.Integer, primary_key=True) 
-    customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
-    item_id = db.Column(db.Integer, db.ForeignKey('items.id'))
-    quantity = db.Column(db.Integer())
+    item_name = db.Column(db.String(64))
+    price = db.Column(db.Integer)
 
     def __repr__(self):
-        return f"<Order: {self.id}: {self.quantity}>"
+        return f"<Item: Id: {self.id}, item_name: {self.item_name}, price: {self.price}>"
