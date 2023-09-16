@@ -9,4 +9,4 @@ class Customer(db.Model):
     address = db.Column(db.String(64))
 
     def __repr__(self):
-        return f"<Customer: Id: {self.id}, name: {self.name}, phone_number: {self.phone_number}, address: {self.phone_number}>"
+        return f"<Customer: Id: {self.id}, name: {self.name}, phone_number: {self.phone_number}, address: {self.address}>"

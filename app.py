@@ -1,3 +1,4 @@
+from flask import Flask, render_template
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -8,9 +9,17 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://andrewbrown@localhost:5432
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from models.customer import Customer
-from models.item import Item
-from models.item_orders import Item_order
-from models.order import Order
+from controllers.customers_controller import customers_blueprint
+from controllers.orders_controller import order_blueprint
+
+app.register_blueprint(customers_blueprint)
+app.register_blueprint(order_blueprint)
 
 migrate = Migrate(app, db)
+
+
+
+
+@app.route("/")
+def home():
+    return render_template('index.jinja')

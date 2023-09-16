@@ -1,0 +1,45 @@
+<html>
+    <head>
+    <title> Jurassic Pork </title>
+    </head>
+    <body>
+
+    <div>
+        <b>{{ customer.name }}:</b>
+            <span>
+            <form style="display:inline" action="/customer/{{customer.id}}" method="POST">
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" />
+
+                <label for="phone number">Phone Number:</label>
+                <input type="number" name="phone number" id="phone number" />
+
+                <label for="address">Address:</label>
+                <input type = "text" name="address" id="address" />
+
+                <input type="submit" value="enter customer">
+
+            </form>
+            </span>
+    </div>
+
+    </div>
+
+    {# <form action="/order" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" />
+        
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" rows="4" cols="80"></textarea>
+        
+        <label for="duration">Duration:</label>
+        <input id="duration" name="duration" type="number"/>
+        
+        <label for="dropdown">Select a user:</label>
+        <select id="dropdown" name="users">
+
+    <input type="submit" value="Add Task">
+    </form> #}
+    </body>
+</html>
