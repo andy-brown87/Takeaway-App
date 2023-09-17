@@ -1,7 +1,7 @@
 body {
-    background-color: rgb(0, 113, 38);
+    background-image: linear-gradient(red, yellow, rgb(30, 255, 0));
+    color:white;
+    border: 10px solid black;
+    border-bottom-right-radius: 100px;
   }
 
-title {
-    
-}

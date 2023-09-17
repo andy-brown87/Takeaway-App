@@ -1,0 +1,18 @@
+<h1>Orders</h1>
+
+{% for orders in orders %}
+
+<ul id = "order list">
+    
+    <li>
+        <a href="/orders/{{order.index(order)}}">{{customers.id}}</a>
+    </li>
+
+    <li>
+        <a href="/orders/{{orders.index(orders)}}">{{order.date}}</a>
+    </li>
+
+{% endfor %}
+
+{% endblock %}
+</ul>

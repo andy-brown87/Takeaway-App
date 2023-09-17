@@ -1,0 +1,22 @@
+<h1>Customers</h1>
+
+{% for customers in customers %}
+
+<ul id = "customer list">
+    
+    <li>
+        <a href="/customers/{{customer.index(customer)}}">{{customer.name}}</a>
+    </li>
+
+    <li>
+        <a href="/customers/{{customers.index(customer)}}">{{customer.phone}}</a>
+    </li>
+
+    <li>
+        <a href="/customers/{{customers.index(customer)}}">{{customer.address}}</a>
+    </li>
+
+{% endfor %}
+
+{% endblock %}
+</ul>

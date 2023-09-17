@@ -17,9 +17,7 @@ app.register_blueprint(order_blueprint)
 
 migrate = Migrate(app, db)
 
-
-
-
 @app.route("/")
 def home():
-    return render_template('index.jinja')
+    return "This is the home page for Jurassic Pork!"
+

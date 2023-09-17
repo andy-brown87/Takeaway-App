@@ -1,0 +1,22 @@
+<h1>Item Orders</h1>
+
+{% for item_orders in item_orders %}
+
+<ul id = "item order list">
+    
+    <li>
+        <a href="/item_orders/{{item_orders.index(item_orders)}}">{{item_orders.order_id}}</a>
+    </li>
+
+    <li>
+        <a href="/item_orders/{{item_orders.index(item_orders)}}">{{item_orders.item_id}}</a>
+    </li>
+
+    <li>
+        <a href="/item_orders/{{item_orders.index(item_orders)}}">{{item_orders.quantity}}</a>
+    </li>
+
+{% endfor %}
+
+{% endblock %}
+</ul>
