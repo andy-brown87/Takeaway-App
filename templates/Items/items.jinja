@@ -1,15 +1,18 @@
 <h1>Items</h1>
 
+{% block content %}
+
 {% for item in item %}
 
 <ul id = "items">
     
+    {# drop down menu taken from item id on items db #}
     <li>
-        <a href="/item/{{item.index(items)}}">{{items.name}}</a>
-    </li>
-
-    <li>
-        <a href="/item/{{item.index(item)}}">{{item.price}}</a>
+        <label for="items">Choose an item:</label> 
+            <select name="items" id="items"> 
+                    <option value="/item{{models.item(id)}}">
+                    </option> 
+    </select>
     </li>
 
 {% endfor %}

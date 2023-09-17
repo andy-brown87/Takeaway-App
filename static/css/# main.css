@@ -1,7 +1,18 @@
-body {
+head {
     background-image: linear-gradient(red, yellow, rgb(30, 255, 0));
     color:white;
     border: 10px solid black;
     border-bottom-right-radius: 100px;
-  }
+}
+
+
+body>header>nav {
+    background-color: black;
+    color: white;
+}
+
+main {
+    background-color: black;
+    color: white;
+}
 
