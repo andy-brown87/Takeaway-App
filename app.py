@@ -11,9 +11,11 @@ migrate = Migrate(app, db)
 
 from controllers.customers_controller import customers_blueprint
 from controllers.orders_controller import order_blueprint
+from controllers.new_order import new_order_blueprint
 
 app.register_blueprint(customers_blueprint)
 app.register_blueprint(order_blueprint)
+app.register_blueprint(new_order_blueprint)
 
 migrate = Migrate(app, db)
 

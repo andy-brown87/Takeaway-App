@@ -42,4 +42,5 @@ def delete_customer():
         if customer.id == id:
             db.session.delete(customer)
             db.session.commit()
+    return render_template("index.jinja")
 

@@ -9,10 +9,27 @@ head {
 body>header>nav {
     background-color: black;
     color: white;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-main {
+body>header {
     background-color: black;
     color: white;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+body {
+    background-color: black;
+    color: white;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
