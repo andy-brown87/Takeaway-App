@@ -1,10 +1,13 @@
-<h1>Items</h1>
+{% extends 'base.jinja' %}
 
 {% block content %}
+
+<h1>Items</h1>
 
 {% for item in item %}
 
 <ul id = "items">
+<td><a href="/items/{{ items.id }}"> {{item.name}} </a></td>
     
     {# drop down menu taken from item id on items db #}
     <li>
@@ -12,10 +15,12 @@
             <select name="items" id="items"> 
                     <option value="/item{{models.item(id)}}">
                     </option> 
-    </select>
+            </select>
     </li>
 
 {% endfor %}
 
 {% endblock %}
 </ul>
+
+
