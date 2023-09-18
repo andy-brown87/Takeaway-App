@@ -12,8 +12,6 @@ new_order_blueprint = Blueprint("new order", __name__)
 
 @new_order_blueprint.route("/orders/new_order", methods=["GET"])
 def new_order():
-    item_from_db = Item.query.all()
-    order_quantity = order_quantity.query.all()
-    customers_id = Customer.id.all()
+    customer_list = Customer.query.all()
 
-    return render_template("orders/new_orders.jinja", item=item_from_db, order_quantity=order_quantity, customers_id=customers_id)
+    return render_template("orders/new_orders.jinja", customers=customer_list)

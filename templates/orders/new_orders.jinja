@@ -5,16 +5,12 @@
 <h1>New Orders</h1>
 
 <form action="/orders" method="POST">
-    <label for="item">Select a food item:</label>
-    <select name="item_id" id="item">
-    {% for item in items %}
-    <option value="{{ item.id }}">{{ item.item_name }}</option>
+    <label for="customer">Select a a customer :</label>
+    <select name="customer_id" id="customer">
+    {% for customer in customers %}
+    <option value="{{ customer.id }}">{{ customer.name }}</option>
     {% endfor %}
     </select>
-
-    <label for="quantity">Quantity:</label>
-        <input id="item_quantity" name="quantity" type="number"/>
-
 <input type="submit" value="Add Order">
 </form>
 
