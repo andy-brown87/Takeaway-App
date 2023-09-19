@@ -10,8 +10,3 @@ new_order_blueprint = Blueprint("new order", __name__)
 
 
 
-@new_order_blueprint.route("/orders/new_order", methods=["GET"])
-def new_order():
-    customer_list = Customer.query.all()
-
-    return render_template("orders/new_orders.jinja", customers=customer_list)

@@ -1,18 +1,41 @@
-{% extends 'base.jinja'%}
+{% extends 'base.jinja' %}
 
 {% block content %}
 
-{% for customers in customers %}
+<ul id = "customers">
+<style>
+ul#menu li {
+  display:inline;
+}
+</style>
+    
+        <h1>Customers:</h1>
+            
+            <ul id="menu">
+            {% for customer in customers %}
+                <th>Name:</th>
+                <li>{{customer.name}}</li>
+                <th>Phone Number:</th>
+                <li>{{customer.phone_number}}</li>
+                <th>Address:</th>
+                <li>{{customer.address}}</li>
+                <br>
+            {% endfor %}
+            </ul>
+            </span>
 
-<h1>Customers</h1>
+
+{% endblock %}
+
+
+{# <h1>Customers</h1>
 
 <ul id = "customer list">
 
 <div>
     <b>{{ customers.name }}</b>
         <span>
-        <h1>🦖 WELCOME TO JURASSIC PORK!!! 🦕</h1>
-        <h2>Please enter a new customer</h2>
+        <h1>Please enter a new customer</h1>
         <form style="display:inline" action="/customer/{{customers.id}}" method="POST">
 
             <label for="name">Name:</label>
@@ -26,14 +49,10 @@
 
             <input type="submit" value="Enter Customer">
 
-            </form>
+        </form> #}
+
+        {# <h3>See list of all Customers:</h3>
+            <a href="/customers/all_customers">Customers</a>
             </span>
-</div>
+</div> #}
 
-    </div>
-
-
-{% endfor %}
-
-{% endblock %}
-</ul>

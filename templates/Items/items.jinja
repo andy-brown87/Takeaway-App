@@ -2,23 +2,25 @@
 
 {% block content %}
 
-<h1>Items</h1>
-
-{% for item in item %}
-
 <ul id = "items">
-<td><a href="/items/{{ items.id }}"> {{item.name}} </a></td>
+<style>
+ul#menu li {
+display:inline;
+}
+</style>
     
-    {# drop down menu taken from item id on items db #}
-    <li>
-        <label for="items">Choose an item:</label> 
-            <select name="items" id="items"> 
-                    <option value="/item{{models.item(id)}}">
-                    </option> 
-            </select>
-    </li>
-
-{% endfor %}
+        <h1>Items:</h1>
+            
+            <ul id="menu">
+            {% for item in items %}
+                <th>Name:</th>
+                <li>{{item.item_name}}</li>
+                <th>, Price: £</th>
+                <li>{{item.price}}</li>
+                <br>
+            {% endfor %}
+            </ul>
+            </span>
 
 {% endblock %}
 </ul>

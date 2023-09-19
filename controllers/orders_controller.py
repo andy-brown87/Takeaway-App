@@ -8,24 +8,7 @@ from datetime import datetime
 from app import db 
 
 
-
-
 order_blueprint = Blueprint("orders", __name__)
-
-# @order_blueprint.route('/order')
-# def index():
-#     return render_template('index.jinja', title='Jurassic Pork', orders = orders)
-
-
-# @order_blueprint.route("/orders",  methods=['GET'])
-# def create_order():
-#     date = request.form['date']
-#     order = Order(customer_id = customer_id, date = date)
-#     db.session.add(order)
-#     db.session.commit()
-#     return redirect('/orders')
-
-
 
 
 @order_blueprint.route("/customers/<int:id>", methods =["GET"])  
@@ -56,12 +39,24 @@ def update_order(order_id):
     db.session.commit()
     return redirect(f"/orders/{order_id}")
 
+
+@order_blueprint.route("/orders/<int:order_id>", methods=["GET"])
+def item_order(order_id):
+    item_order=Item.query.get(order_id)
+    order_id=Order.query.get(order_id)
+    return render_template("item_orders/item_orders.jinja", item_order=item_order, order_id=order_id)
+
 @order_blueprint.route("/orders", methods=["POST"])
 def save_order():
-
     todays_date = datetime.now().strftime("%m/%d/%Y")
     customer_id = request.form["customer_id"]
     order_to_be_saved = Order(customer_id=customer_id, date=todays_date)
     db.session.add(order_to_be_saved)
     db.session.commit()
     return redirect(f"/orders/{order_to_be_saved.id}")
+
+@order_blueprint.route("/orders", methods=["GET"])
+def new_order():
+    customers_from_db = Customer.query.all()
+    return render_template("orders/new_orders.jinja", customers=customers_from_db)
+

@@ -1,5 +1,7 @@
 {% block content %}
 
+
+
 <h1>Orders</h1>
 
 {% for orders in orders %}
@@ -7,7 +9,7 @@
 <ul id = "order list">
     
     <li>
-        <a href="/orders/{{order.index(order)}}">{{customers.id}}</a>
+        <a href="/orders/{{order.index(orders)}}">{{customers.id}}</a>
     </li>
 
     <li>
