@@ -33,3 +33,12 @@ body {
     justify-content: space-between;
 }
 
+
+ul {
+    list-style: none;
+}
+  
+  li {
+    display: inline-block;
+    margin-right: 10px; 
+}

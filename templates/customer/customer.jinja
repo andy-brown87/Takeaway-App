@@ -14,29 +14,26 @@ ul#menu li {
             <ul id="menu">
             {% for customer in customers %}
                 <th>Name:</th>
-                <li>{{customer.name}}</li>
+                <li>{{customer.name}}.</li>
                 <th>Phone Number:</th>
-                <li>{{customer.phone_number}}</li>
+                <li>{{customer.phone_number}}.</li>
                 <th>Address:</th>
-                <li>{{customer.address}}</li>
+                <li>{{customer.address}}.</li>
+                <br>
                 <br>
             {% endfor %}
             </ul>
             </span>
 
-
-{% endblock %}
-
-
-{# <h1>Customers</h1>
+<h1>Customers</h1>
 
 <ul id = "customer list">
 
 <div>
-    <b>{{ customers.name }}</b>
+    <b>{{ customer.name }}</b>
         <span>
-        <h1>Please enter a new customer</h1>
-        <form style="display:inline" action="/customer/{{customers.id}}" method="POST">
+        <h1>Enter a new customer</h1>
+        <form style="display:inline" action="/customers/{{customer.id}}" method="POST">
 
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" />
@@ -49,10 +46,8 @@ ul#menu li {
 
             <input type="submit" value="Enter Customer">
 
-        </form> #}
+        </form> 
 
-        {# <h3>See list of all Customers:</h3>
-            <a href="/customers/all_customers">Customers</a>
-            </span>
-</div> #}
+</div>
 
+{% endblock %}

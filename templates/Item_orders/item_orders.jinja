@@ -1,4 +1,4 @@
-{% extends 'base.jinja'%}
+{% extends 'base.jinja' %}
 
 {% block content %}
 
@@ -11,30 +11,27 @@ ul#menu li {
 
 <h1>Item Orders</h1>
 
-{% for item_order in item_orders %}
+<p>The date of the order: {{ order.date }} </p>
+<p>The name of the customer is: {{ order.customer.name}} </p>
 
-<form action="/orders/<int:order_id>" method="POST">
+<form action="/orders/{{ order.id}}/add_item" method="POST">
     <label for="item">Select an item :</label>
     <select name="item_id" id="item">
         {% for item in items %}
-            <option value="{{ item.id }}">{{ item.name }}</option>
+            <option value="{{ item.id }}">{{ item.item_name }}</option>
         {% endfor %}
     </select>
-
-    <label for="order">Select an order :</label>
-    <select name="order_id" id="order">
-        {% for order in orders %}
-            <option value="{{ order.id }}">{{ order.customer_id }}</option>
-        {% endfor %}
-    </select>
-
     <label for="quantity">Quantity:</label>
         <input id="quantity" name="quantity" type="number"/>
 
-<input type="submit" value="Add Order">
+<input type="submit" value="Add to order">
 </form>
 
-{% endfor %}
+{% for item_order in order.item_orders%}
+<p>Item: {{ item_order.item.item_name }}</p>
+<p>Quantity: {{ item_order.quantity }}</p>
+<p>Price: £{{ item_order.item.price }}</p>
+    {% endfor %}
 
 {% endblock %}
 </ul>

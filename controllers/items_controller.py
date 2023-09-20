@@ -12,7 +12,5 @@ items_blueprint = Blueprint("items", __name__)
 def get_items():
     items_from_db = Item.query.all()
     order_from_db = Order.query.all()
-    quantity = Item_order.query.all()
-
-    return render_template("items/items.jinja", items=items_from_db, order=order_from_db quantity=quantity)
+    return render_template("/items/items.jinja", items=items_from_db, order=order_from_db,)
 

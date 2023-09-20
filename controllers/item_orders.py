@@ -8,10 +8,11 @@ from app import db
 
 item_order_blueprint = Blueprint("item order", __name__)
 
-@item_order_blueprint.route("/orders/<int:order_id>")
-def add_items():
-    item_to_add = Item_order.query.all()
-    order_to_add = Order.query.all()
-    return render_template("items/items.jinja", item_to_add=item_to_add, order_to_add=order_to_add)
+@item_order_blueprint.route("/orders/<int:order_id>" )
+def add_items(order_id):
+    items_to_add = Item.query.all()
+    order_to_add = Order.query.get(order_id)
+    price_to_add = Item.query.all()
+    return render_template("item_orders/item_orders.jinja", items=items_to_add, order=order_to_add, price=price_to_add,)
 
     

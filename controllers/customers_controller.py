@@ -15,13 +15,13 @@ def get_customers():
     customers_from_db = Customer.query.all()
     return render_template("customer/customer.jinja", customers=customers_from_db, items=items_from_db)
 
-@customers_blueprint.route("/customers/delete", methods =["POST"])
-def delete_customer():
-    id = int(request.form.get("customer_id"))
-    customers_from_db = Customer.query.all()
-    for customer in customers_from_db:
-        if customer.id == id:
-            db.session.delete(customer)
-            db.session.commit()
-    return render_template("index.jinja")
+# @customers_blueprint.route("/customers/delete", methods =["POST"])
+# def delete_customer():
+#     id = int(request.form.get("customer_id"))
+#     customers_from_db = Customer.query.all()
+#     for customer in customers_from_db:
+#         if customer.id == id:
+#             db.session.delete(customer)
+#             db.session.commit()
+#     return render_template("index.jinja")
 

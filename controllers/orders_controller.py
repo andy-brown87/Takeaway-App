@@ -40,15 +40,15 @@ def update_order(order_id):
     return redirect(f"/orders/{order_id}")
 
 
-@order_blueprint.route("/orders/<int:order_id>", methods=["GET"])
-def item_order(order_id):
-    item_order=Item.query.get(order_id)
-    order_id=Order.query.get(order_id)
-    return render_template("item_orders/item_orders.jinja", item_order=item_order, order_id=order_id)
+# @order_blueprint.route("/orders/<int:order_id>", methods=["GET"])
+# def item_order(order_id):
+#     item_order=Item.query.get(order_id)
+#     order_id=Order.query.get(order_id)
+#     return render_template("item_orders/item_orders.jinja", item_order=item_order, order=order_id)
 
 @order_blueprint.route("/orders", methods=["POST"])
 def save_order():
-    todays_date = datetime.now().strftime("%m/%d/%Y")
+    todays_date = datetime.now().strftime("%d/%m/%Y")
     customer_id = request.form["customer_id"]
     order_to_be_saved = Order(customer_id=customer_id, date=todays_date)
     db.session.add(order_to_be_saved)
