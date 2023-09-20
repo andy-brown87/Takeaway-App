@@ -15,6 +15,13 @@ def get_customers():
     customers_from_db = Customer.query.all()
     return render_template("customer/customer.jinja", customers=customers_from_db, items=items_from_db)
 
+@customers_blueprint.route("/customers", methods=["GET"])
+def new_customer():
+    customers_from_db = Customer.query.all()
+    return render_template("customer/new_customer.jinja", customers=customers_from_db)
+
+
+
 # @customers_blueprint.route("/customers/delete", methods =["POST"])
 # def delete_customer():
 #     id = int(request.form.get("customer_id"))
