@@ -3,24 +3,26 @@ head {
     color:white;
     border: 10px solid black;
     border-bottom-right-radius: 100px;
+    align-items: center;
 }
 
 
 body>header>nav {
-    background-color: black;
+    background-color: red;
     color: white;
     padding: 16px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 body>header {
-    background-color: black;
+    background-color: blue;
     color: white;
     padding: 16px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -29,16 +31,23 @@ body {
     color: white;
     padding: 16px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
+body {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #F6F4F3;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding: 0px;
+    margin: 0px;
+  }
 
-ul {
-    list-style: none;
-}
-  
-  li {
-    display: inline-block;
-    margin-right: 10px; 
-}
+a {
+    color: rgb(255, 255, 255);
+  }
+
+
+

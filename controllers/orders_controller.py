@@ -60,3 +60,10 @@ def new_order():
     customers_from_db = Customer.query.all()
     return render_template("orders/new_orders.jinja", customers=customers_from_db)
 
+@order_blueprint.route("/orders")
+def get_orders():
+    order_id_from_db = Item_order.query.all()
+    item_id_from_db = Item_order.query.all()
+    quantity_from_db = Item_order.query.all()
+    return render_template("/orders/new_orders.jinja", order=order_id_from_db, item=item_id_from_db, quantity=quantity_from_db,)
+

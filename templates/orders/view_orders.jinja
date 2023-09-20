@@ -1,0 +1,20 @@
+{% block content %}
+
+
+<h1>View All Orders</h1>
+
+<ul id="menu">
+            {% for item_order in item_orders %}
+                <th>Order ID:</th>
+                <li>{{item_order.order_id}}.</li>
+                <th>Item ID:</th>
+                <li>{{item_order.item_id}}.</li>
+                <th>Quantity:</th>
+                <li>{{item_order.quantity}}.</li>
+                <br>
+                <br>
+            {% endfor %}
+            </ul>
+
+
+{% endblock %}
