@@ -8,6 +8,7 @@ from app import db
 
 
 new_order_blueprint = Blueprint("new order", __name__)
+# this controller function should just be inside a 'item_orders_controller' file, as it's code that's related to handling a request about saving a new 'item_order' 
 
 
 @new_order_blueprint.route("/orders/<int:order_id>/add_item", methods=["POST"])

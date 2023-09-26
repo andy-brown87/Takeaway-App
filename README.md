@@ -17,3 +17,9 @@ There should be a page where you can see all `Customer`s and be able to click th
 - Be able to order multiples of an item
 - Be able to add up total for an order
 - Be able to set an order as dispatched and delivered
+
+<!-- you should add the following to your readme -->
+<!-- 1. context to the program, what is this, when did you do it, what are the technoglies used/what is needed to run the app-->
+<!-- 2. some screen shots of the app, even better a youtube video, even even better host it online but that's like a whole project of it's own -->
+<!-- 3. a _STEP_ by _STEP_ guide on how to get the app running-->
+<!-- 4. add a seed  file so if someone wants to checkout your app they have some data to work with-->

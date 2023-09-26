@@ -15,20 +15,26 @@ order_blueprint = Blueprint("orders", __name__)
 def view_order(id):
     orders_from_db = Order.query.all()
     customers_from_db = Customer.query.all()
+    # What is this for loop doing here? what is it's purpose? 
     for customers in customers_from_db:
         if customers.id == id:
-            return render_template("orders.jinja", order=orders_from_db, customers=customers_from_db)
+            return render_template("orders.jinja", order=orders_from_db, customers=customers_from_db) # if we ever hit this line it will error as there is no "orders.jinja" inside our 'templates' folder.
         
 
 @order_blueprint.route("/orders/delete", methods =["POST"])
 def delete_order():
     id = int(request.form.get("order_id"))
     orders_from_db = Order.query.all()
+    # we can just use get one, instead of getting all our orders.
+    ######################## refactored code
+    # order = Order.query.get(id)
+    # db.session.delete(order)
+    # db.session.commit()
     for order in orders_from_db:
         if order.id == id:
             db.session.delete(order)
             db.session.commit()
-    return render_template("orders.jinja", order=orders_from_db)
+    return render_template("orders.jinja", order=orders_from_db) #this will crah if we ever hit this line, there is no 'orders.jinja' inside templates
 
 
 @order_blueprint.route("/orders/<int:order_id>", methods=["POST"])
@@ -55,12 +61,12 @@ def save_order():
     db.session.commit()
     return redirect(f"/orders/{order_to_be_saved.id}")
 
-@order_blueprint.route("/orders", methods=["GET"])
+@order_blueprint.route("/orders", methods=["GET"]) # this controller function is for the same route as below
 def new_order():
     customers_from_db = Customer.query.all()
     return render_template("orders/new_orders.jinja", customers=customers_from_db)
 
-@order_blueprint.route("/orders")
+@order_blueprint.route("/orders")# this controller function is for the same route as above, the default method for a controller function like this is a GET 
 def get_orders():
     order_id_from_db = Item_order.query.all()
     item_id_from_db = Item_order.query.all()
