@@ -7,8 +7,8 @@ from models.order import Order
 from app import db
 
 item_order_blueprint = Blueprint("item order", __name__)
-
-@item_order_blueprint.route("/orders/<int:order_id>" )
+# this should live in the 'orders_controller'file as it's a function that's handling a request about a 'order'
+@item_order_blueprint.route("/orders/<int:order_id>")
 def add_items(order_id):
     items_to_add = Item.query.all()
     order_to_add = Order.query.get(order_id)
