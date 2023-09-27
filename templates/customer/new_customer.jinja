@@ -1,7 +1,7 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-{# no reference to the "customers" variable that we passed in here, we are not using the data that we are passing to this template. #}
+<ul id = "new_customers">
 <span>
     <h1>Enter a new customer</h1>
         <form style="display:inline" action="/customer/new_customer" method="POST">
@@ -17,4 +17,5 @@
             <input type="submit" value="Enter Customer">
 
         </form> 
+</ul>
 {% endblock %}

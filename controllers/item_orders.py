@@ -6,13 +6,15 @@ from models.customer import Customer
 from models.order import Order
 from app import db
 
-item_order_blueprint = Blueprint("item order", __name__)
-# this should live in the 'orders_controller'file as it's a function that's handling a request about a 'order'
-@item_order_blueprint.route("/orders/<int:order_id>")
-def add_items(order_id):
-    items_to_add = Item.query.all()
-    order_to_add = Order.query.get(order_id)
-    price_to_add = Item.query.all()
-    return render_template("item_orders/item_orders.jinja", items=items_to_add, order=order_to_add, price=price_to_add,)
+new_order_blueprint = Blueprint("new order", __name__)
+
+@new_order_blueprint.route("/orders/<int:order_id>/add_item", methods=["POST"])
+def get_new_order(order_id):
+    item_to_add = request.form["item_id"]
+    quantity_to_add = request.form["quantity"]
+    item_order_to_be_saved = Item_order(item_id=item_to_add, quantity=quantity_to_add, order_id=order_id )
+    db.session.add(item_order_to_be_saved)
+    db.session.commit()
+    return redirect(f"/orders/{order_id}")
 
     
