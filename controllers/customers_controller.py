@@ -19,7 +19,7 @@ def get_customers():
 def new_customer():
     customers_from_db = Customer.query.all()
     # We are not using our "customers" in our 'new_customer.jinja' template, so it's redundant to pass this in. We only should pass data into our templates that we plan on using. 
-    return render_template("customer/new_customer.jinja", customers=customers_from_db #)
+    return render_template("customer/new_customer.jinja", customers=customers_from_db)
 
 
 

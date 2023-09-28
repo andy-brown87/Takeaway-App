@@ -1,25 +1,34 @@
-# python-project
+**PYTHON PROJECT**
 
-# Food Takeaway
+**Food Takeaway**
 
-You’ve been tasked with making an order management system for a takeaway. This takeaway takes orders over the phone and enters them into the system for the kitchen to cook them and to keep track of them. 
+I have been tasked with making an order management system for a takeaway. 
+This takeaway takes orders over the phone and enters them into the system for the kitchen to cook and keep track of them. 
 
-## MVP
+The app is able to create a customer with a name, phone number, address, and a list of orders.
 
-You should be able to create an `Customer` with a name, phone number, address, and a list of `Order`s.
+A customer is able to place several orders. The orders contain a list of item's. The item's have a name and a price.
 
-A `Customer` should be able to place several `Order`s and an `Order` should contain a list of `Item`s (an item should have a name and a price).
+To use the app you will need:
 
-There should be a page where you can see all `Customer`s and be able to click through to each `Customer` to see the details of their `Orders` and where you should be able to edit or delete the `Order`. You should be able to edit and delete `Customer`s
+** Python3 and postgresql installed on your machine,
 
-## Extensions:
+** You will also need the following pip3 packages: 
+Flask, python-dotenv, flask-SQLAlchemy, flask-migrate,
 
-- Be able to order multiples of an item
-- Be able to add up total for an order
-- Be able to set an order as dispatched and delivered
+** You will need to set up a database using the following command in terminal:
+create db itemOrders_app
 
-<!-- you should add the following to your readme -->
-<!-- 1. context to the program, what is this, when did you do it, what are the technoglies used/what is needed to run the app-->
-<!-- 2. some screen shots of the app, even better a youtube video, even even better host it online but that's like a whole project of it's own -->
-<!-- 3. a _STEP_ by _STEP_ guide on how to get the app running-->
-<!-- 4. add a seed  file so if someone wants to checkout your app they have some data to work with-->
+** On line 8:
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://__________@localhost:5432/ItemOrders_app"
+ you will need to enter your username after postgresql://
+ and before @localhost:5432/ItemOrders_app"
+
+** To populate the databse you will need to run the following commands in terminal:
+flask db upgrade
+flask seed
+
+** To run the application use the following command in terminal:
+flask run
+
+** Copy the http link and paste into the chrome browser.
