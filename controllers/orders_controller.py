@@ -18,7 +18,7 @@ def view_order(id):
     return render_template("orders/orders.jinja", order=orders_from_db, customers=customers_from_db)
         
 
-@order_blueprint.route("/orders/delete", methods =["POST"])
+@order_blueprint.route("/orders/delete_order", methods =["POST"])
 def delete_order():
     id = int(request.form.get("order_id"))
     orders_from_db = Order.query.all()
