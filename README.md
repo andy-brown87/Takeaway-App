@@ -15,11 +15,12 @@ A customer is able to place several orders. The orders contain a list of item's.
 
 To use the app you will need:
 
- Python3 and postgresql installed on your machine,
+`Python3` and `postgresql` installed on your machine,
 
  ---
 
-You will also need the following pip3 packages: 
+You will also need the following packages: 
+
 `pip3 install flask`
 
 `pip3 install flask-SWLAlchemy`
@@ -31,17 +32,24 @@ You will also need the following pip3 packages:
 ---
 
 You will need to set up a database using the following command in terminal:
+
 `create db itemOrders_app`
 
 ---
 
 On line 8:
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://__________@localhost:5432/ItemOrders_app"
- you will need to enter your username after postgresql://
- and before @localhost:5432/ItemOrders_app"
+`app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://__________@localhost:5432/ItemOrders_app"`
 
- ---
+you will need to enter your username after: 
+
+`postgresql://`
+
+and before: 
+
+`@localhost:5432/ItemOrders_app"`
+
+---
 
 To populate the database you will need to run the following commands in terminal:
 
