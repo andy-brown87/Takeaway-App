@@ -1,6 +1,6 @@
-# H1 PYTHON PROJECT
+#  PYTHON PROJECT
 
-## H2 Food Takeaway
+##  Food Takeaway
 
 ---
 
@@ -19,35 +19,42 @@ To use the app you will need:
 
  ---
 
-** You will also need the following pip3 packages: 
+You will also need the following pip3 packages: 
 `pip3 install flask`
+
 `pip3 install flask-SWLAlchemy`
+
 `pip3 install flask-migrate`
+
 `pip3 install python-dotenv`
 
 ---
 
-** You will need to set up a database using the following command in terminal:
+You will need to set up a database using the following command in terminal:
 `create db itemOrders_app`
 
 ---
 
-** On line 8:
+On line 8:
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://__________@localhost:5432/ItemOrders_app"
  you will need to enter your username after postgresql://
  and before @localhost:5432/ItemOrders_app"
 
  ---
 
-** To populate the database you will need to run the following commands in terminal:
-`flask db upgrade
+To populate the database you will need to run the following commands in terminal:
+
+`flask db upgrade`
+
 `flask seed`
 
 ---
 
-** To run the application use the following command in terminal:
+To run the application use the following command in terminal:
+
 `flask run`
 
 ---
 
-** Copy the http link and paste into the chrome browser.
+Copy the http link and paste into the chrome browser.
