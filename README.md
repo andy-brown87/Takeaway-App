@@ -21,13 +21,16 @@ To use the app you will need:
 
 You will also need the following packages: 
 
-`pip3 install flask`
+```
+pip3 install flask
 
-`pip3 install flask-SWLAlchemy`
+pip3 install flask-SWLAlchemy
 
-`pip3 install flask-migrate`
+pip3 install flask-migrate
 
-`pip3 install python-dotenv`
+pip3 install python-dotenv
+
+```
 
 ---
 
@@ -53,9 +56,12 @@ and before:
 
 To populate the database you will need to run the following commands in terminal:
 
-`flask db upgrade`
+```
+flask db upgrade
 
-`flask seed`
+flask seed
+
+```
 
 ---
 
