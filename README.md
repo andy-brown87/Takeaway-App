@@ -36,7 +36,7 @@ pip3 install python-dotenv
 
 You will need to set up a database using the following command in terminal:
 
-`create db itemOrders_app`
+```create db itemOrders_app```
 
 ---
 
@@ -67,7 +67,7 @@ flask seed
 
 To run the application use the following command in terminal:
 
-`flask run`
+```flask run```
 
 ---
 
